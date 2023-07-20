@@ -10,11 +10,11 @@ const Row = ({ children, spacing }) => {
   return (
     <div className="Row">
       {React.Children.map(children, (child, index) => {
-        return React.cloneElement(child, {
+        return React.cloneElement(child, { 
           style: {
             ...child.props.style,
             ...(index > 0 ? childStyle : {}),
-          }
+          } 
         });
       })}
     </div>

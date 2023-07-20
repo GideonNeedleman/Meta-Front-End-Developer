@@ -4,14 +4,10 @@ const ThemeContext = React.createContext(undefined);
 
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState("light");
+    const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light")
 
     return (
-        <ThemeContext.Provider
-            value={{
-                theme,
-                toggleTheme: () => setTheme(theme === "light" ? "dark" : "light")
-            }}
-        >
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );
